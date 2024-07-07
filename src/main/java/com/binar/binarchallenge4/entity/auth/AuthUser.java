@@ -2,6 +2,8 @@ package com.binar.binarchallenge4.entity.auth;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import javax.persistence.*;
+
+import lombok.Setter;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
@@ -11,7 +13,9 @@ import java.util.Collection;
 import java.util.Date;
 import java.util.List;
 
-public class User implements UserDetails, Serializable {
+@Setter
+@Entity
+public class AuthUser implements UserDetails, Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

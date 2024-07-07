@@ -30,8 +30,8 @@ public class Role implements GrantedAuthority {
     private List<RolePath> rolePaths;
 
     @JsonIgnore
-    @ManyToMany(targetEntity = User.class, mappedBy = "roles",fetch = FetchType.LAZY)
-    private List<User> users;
+    @ManyToMany(targetEntity = AuthUser.class, mappedBy = "roles",fetch = FetchType.LAZY)
+    private List<AuthUser> users;
 
     public Long getId() {
         return id;
@@ -71,11 +71,11 @@ public class Role implements GrantedAuthority {
         this.rolePaths = rolePaths;
     }
 
-    public List<User> getUsers() {
+    public List<AuthUser> getUsers() {
         return users;
     }
 
-    public void setUsers(List<User> users) {
+    public void setUsers(List<AuthUser> users) {
         this.users = users;
     }
 }

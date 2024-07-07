@@ -3,17 +3,15 @@ package com.binar.binarchallenge4.entity.auth;
 import javax.persistence.*;
 
 import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.oauth2.provider.ClientDetails;
 import org.springframework.util.StringUtils;
 
 import java.io.Serializable;
-import java.util.HashMap;
-import java.util.HashSet;
-import java.util.Map;
-import java.util.Set;
+import java.util.*;
 
 @Entity
 @Table(name = "oauth_client")
-public class Client implements Serializable {
+public class Client implements ClientDetails, Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
